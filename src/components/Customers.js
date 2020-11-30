@@ -31,7 +31,7 @@ function Customers(){
 
     return (
 
-        <div className="ag-theme-material" style={{height: '700px', width: '50%', margin: 'auto'}}>
+        <div className="ag-theme-material" style={{height: '700px', width: '80%', margin: 'auto'}}>
             <AgGridReact
             
             suppressCellSelection={true}

@@ -6,7 +6,7 @@ import Trainings from './components/Trainings';
 function App() {
   return (
     <div className="App">
-        <Trainings />
+        <Customers />
     </div>
   );
 }
