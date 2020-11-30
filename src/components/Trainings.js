@@ -6,23 +6,26 @@ import moment from 'moment';
 
 function Trainings(){
     const [trainings, setTrainings] = useState([]);
+    
 
     useEffect(() => {
         getTrainings();
     }, [])
 
     const getTrainings = () => {
-        fetch('https://customerrest.herokuapp.com/api/trainings')
+        fetch('https://customerrest.herokuapp.com/gettrainings')
         .then((response) => response.json())
-        .then((data) => setTrainings(data.content))
+        .then((data) => setTrainings(data))
         .catch((err) => console.error(err));
     }
 
     const columns = [
-
-        { headerName: moment('Date').format('L') , field: 'date', sortable: true, filter: true },
+        
+        { headerName: 'Date', field: 'date', cellRenderer: (data) => { return moment(data.value).format("MM.DD.YYYY HH:mm")}, sortable: true, filter: true },
         { headerName: 'Duration', field: 'duration', sortable: true, filter: true },
         { headerName: 'Activity', field: 'activity', sortable: true, filter: true },
+        { headerName: 'Customer', field: 'customer.firstname', sortable: true, filter: true },
+        { headerName: '', field: 'customer.lastname', sortable: true, filter: true },
         
         
     ]
@@ -32,11 +35,13 @@ function Trainings(){
         <div className="ag-theme-material" style={{height: '700px', width: '70%', margin: 'auto'}}>
             <AgGridReact
             
+            
             suppressCellSelection={true}
             columnDefs={columns}
             rowData={trainings}
             pagination="true"
             paginationPageSize="10"
+
             >
             </AgGridReact>
            
