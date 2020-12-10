@@ -7,7 +7,7 @@ import Trainings from './Trainings';
 
 function Tabmenu(){
 
-    const[value, setValue] = useState('Home');
+    const[value, setValue] = useState('Customers');
     const handleChange = (event, value) => {
         setValue(value);
     };
@@ -31,11 +31,7 @@ function Tabmenu(){
                     <Trainings />
                 </div>
             )}
-            {value === "Home" && (
-                <div>
-                    <h2>Welcome to Personal trainer!</h2>
-                </div>
-            )}
+           
 
                 
         </div>
