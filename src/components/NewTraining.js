@@ -37,7 +37,7 @@ function NewTraining(props){
     return(
         <div>
             <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Add training
+        Add
       </Button>
 
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">

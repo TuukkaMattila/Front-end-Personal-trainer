@@ -4,6 +4,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Customers from './Customers';
 import Trainings from './Trainings';
+import Calendar from './Calendar';
 
 function Tabmenu(){
 
@@ -19,6 +20,7 @@ function Tabmenu(){
                 <Tabs value={value} onChange={handleChange}>
                 <Tab value="Customers" label="Customers" />
                 <Tab value="Trainings" label="Trainings" />
+                <Tab value="Calendar" label="Calendar" />
                 </Tabs>
             </AppBar>
             {value === "Customers" && (
@@ -29,6 +31,12 @@ function Tabmenu(){
             {value === "Trainings" && (
                 <div>
                     <Trainings />
+                </div>
+            )}
+
+            {value === "Calendar" && (
+                <div>
+                    <Calendar />
                 </div>
             )}
            

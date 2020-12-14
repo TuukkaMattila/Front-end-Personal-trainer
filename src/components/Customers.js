@@ -60,7 +60,6 @@ function Customers(){
             
         })
             .then(_ => gridRef.current.refreshCells({rowNodes: getCustomers()}))
-
             .catch(err => console.error(err))
     }
 
@@ -123,7 +122,7 @@ function Customers(){
     return (
         <div>
             <AddCustomer addCustomer={addCustomer} />
-        <div className="ag-theme-material" style={{height: '700px', width: '80%', margin: 'auto'}}>
+        <div className="ag-theme-material" style={{height: '700px', width: '90%', margin: 'auto'}}>
             <AgGridReact
             ref={gridRef}
             suppressCellSelection={true}
